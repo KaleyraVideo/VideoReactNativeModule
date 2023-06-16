@@ -1,0 +1,6 @@
+rootProject.name = 'video_react'
+
+include ':video_hybrid_native_bridge'
+
+project(':video_hybrid_native_bridge').projectDir = new File('../native-bridge/android')
+
