@@ -424,7 +424,7 @@ PODS:
     - FirebaseCoreExtension (= 10.7.0)
     - React-Core
     - RNFBApp
-  - video-react-native-module (0.1.0):
+  - video-react-native-module (1.0.0):
     - Bandyer (~> 3.6.3)
     - React-Core
   - Yoga (1.14.0)
@@ -626,7 +626,7 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 475a4c447168d0ad4c807e48ef5e0963a0f4eb1b
   RNFBApp: 0d8bf86673bbad0524d1ceac3944d71ccf48a0e4
   RNFBMessaging: 4b8cb1215465bacca36d0fcfc2f51e7e2aa1bc91
-  video-react-native-module: c42655718f75317f3c17153fe862265859423217
+  video-react-native-module: b5b610af5c60fbb596b3670dc379fe43f7191c4b
   Yoga: 540948b36b46e9469992c4d30ddcc21110b8afe5
 
 PODFILE CHECKSUM: a65e60a34b77437b055c7dea246414c728033632
