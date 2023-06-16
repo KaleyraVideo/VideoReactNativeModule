@@ -1,6 +1,5 @@
 {
   "name": "@bandyer/video-react-native-module",
-  "private": true,
   "version": "1.0.0",
   "description": "Kaleyra Video module for react native.",
   "main": "lib/commonjs/index",
