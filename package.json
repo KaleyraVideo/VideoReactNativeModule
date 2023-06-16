@@ -58,7 +58,7 @@
   ],
   "repository": "https://github.com/KaleyraVideo/VideoReactNativeModule",
   "author": "Kaleyra S.p.a (https://www.kaleyra.com/)",
-  "license": "LGPL-3",
+  "license": "LGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/KaleyraVideo/VideoReactNativeModule/issues"
   },
