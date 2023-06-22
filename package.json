@@ -2,14 +2,14 @@
   "name": "@bandyer/video-react-native-module",
   "version": "1.0.0",
   "description": "Kaleyra Video module for react native.",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
-  "react-native": "src/KaleyraVideo",
-  "source": "src/KaleyraVideo",
+  "react-native": "index.ts",
   "files": [
     "src",
     "lib",
+    "index.ts",
     "android",
     "ios",
     "cpp",
@@ -17,7 +17,9 @@
     "native-bridge",
     "!lib/typescript/example",
     "!ios/build",
+    "!native-bridge/iOS/Tests",
     "!android/build",
+    "!native-bridge/android/src/test",
     "!android/gradle",
     "!android/gradlew",
     "!android/gradlew.bat",
@@ -31,8 +33,7 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepack": "bob build",
-    "release": "release-it --no-increment",
+    "prepack": "rm -rf ./lib && tsc --build ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install && yarn example pods",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build",
@@ -66,28 +67,28 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "^1.2.2",
     "@commitlint/config-conventional": "^17.0.2",
+    "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
     "@types/react": "~17.0.21",
     "@types/react-native": "0.70.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
-    "eslint": "^8.4.1",
+    "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
+    "quicktype": "^16.0.43",
     "react": "18.2.0",
     "react-native": "0.71.9",
-    "react-native-builder-bob": "^0.20.0",
-    "release-it": "^15.0.0",
-    "typescript": "^4.5.2",
-    "quicktype": "^16.0.43",
-    "typedoc": "^0.24.4"
+    "typedoc": "^0.24.4",
+    "typescript": "^4.9.5"
   },
   "resolutions": {
     "@types/react": "17.0.21"
@@ -111,23 +112,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
-    }
   },
   "eslintConfig": {
     "root": true,
@@ -158,19 +142,5 @@
     "tabWidth": 2,
     "trailingComma": "es5",
     "useTabs": false
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars,@typescript-eslint/no-explicit-any */
 // Copyright © 2018-2023 Kaleyra S.p.a. All Rights Reserved.
 // See LICENSE for licensing information
 
@@ -43,7 +44,7 @@ export class ReactNativeEventEmitter
   }
 
   clear() {
-    for (let event in HybridEvents) {
+    for (const event in HybridEvents) {
       this.removeAllListeners(event);
     }
   }

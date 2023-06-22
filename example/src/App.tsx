@@ -12,7 +12,7 @@ import { CallType } from '../../native-bridge/TypeScript/types/CallType';
 import { Image, Platform, View } from 'react-native';
 import { styles } from './styles/styles';
 import { Button, TextInput } from 'react-native-paper';
-import KaleyraVideo from '../../src/KaleyraVideo';
+import { Environments, KaleyraVideo, Regions } from '@bandyer/video-react-native-module';
 import { NotificationProxy } from './NotificationProxy';
 import { HmsPushMessaging } from '@hmscore/react-native-hms-push';
 import { UserStorage } from './useStorage';
@@ -20,8 +20,8 @@ import messaging from '@react-native-firebase/messaging';
 
 const kaleyraVideo = KaleyraVideo.configure({
   appID: APP_ID,
-  environment: KaleyraVideo.environments.new(ENVIRONMENT),
-  region: KaleyraVideo.regions.new(REGION),
+  environment: Environments.new(ENVIRONMENT),
+  region: Regions.new(REGION),
   logEnabled: true,
   tools: {
     chat: {
@@ -50,7 +50,7 @@ if (Platform.OS === 'android') {
     const user = await UserStorage.user;
     const payload = JSON.parse(dataMessage.data);
     kaleyraVideo.handlePushNotificationPayload(
-      JSON.stringify(payload.kaleyra.payload)
+      JSON.stringify(payload.kaleyra.payload),
     );
     if (!user) return Promise.reject('user not logged');
     connect(user);
@@ -61,7 +61,7 @@ if (Platform.OS === 'android') {
     const user = await UserStorage.user;
     const payload = JSON.parse(remoteMessage.data!.message);
     kaleyraVideo.handlePushNotificationPayload(
-      JSON.stringify(payload.kaleyra.payload)
+      JSON.stringify(payload.kaleyra.payload),
     );
     if (!user) return Promise.reject('user not logged');
     connect(user);
@@ -122,7 +122,7 @@ export default function App() {
       });
       NotificationProxy.subscribeForNotifications(signInUser);
     },
-    [storeUser]
+    [storeUser],
   );
 
   const signOut = () => {
@@ -142,17 +142,17 @@ export default function App() {
     <View style={styles.flex}>
       <Image style={styles.logo} source={require('./images/logo.png')} />
       <TextInput
-        label="Sign in userID"
+        label='Sign in userID'
         value={signInUserInput}
         onChangeText={(value) => {
           setSignInUserInput(value);
         }}
-        autoCapitalize="none"
+        autoCapitalize='none'
         disabled={!!user}
       />
       <View style={styles.row}>
         <Button
-          mode="contained"
+          mode='contained'
           style={styles.button}
           onPress={() => {
             signIn(signInUserInput);
@@ -162,7 +162,7 @@ export default function App() {
           Sign in
         </Button>
         <Button
-          mode="contained"
+          mode='contained'
           style={styles.button}
           onPress={signOut}
           disabled={!user}
@@ -171,16 +171,16 @@ export default function App() {
         </Button>
       </View>
       <TextInput
-        label="Enter users to call/chat"
+        label='Enter users to call/chat'
         disabled={!user}
-        autoCapitalize="none"
+        autoCapitalize='none'
         onChangeText={(value) => {
           participants.current = value.split(',');
         }}
       />
       <View style={styles.row}>
         <Button
-          mode="contained"
+          mode='contained'
           style={styles.button}
           disabled={!user}
           onPress={() => {
@@ -190,7 +190,7 @@ export default function App() {
           Call
         </Button>
         <Button
-          mode="contained"
+          mode='contained'
           style={styles.button}
           disabled={!user}
           onPress={() => {

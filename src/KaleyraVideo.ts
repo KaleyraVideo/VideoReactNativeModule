@@ -20,6 +20,13 @@ import { AccessTokenResponse } from '../native-bridge/TypeScript/types/AccessTok
 import { Events as HybridEvents } from '../native-bridge/TypeScript/Events';
 import { ReactNativeEventEmitter } from './ReactNativeEventEmitter';
 import type { Events } from './events/Events';
+import { Tools } from 'native-bridge/TypeScript/types/Tools';
+import { IosConfiguration } from 'native-bridge/TypeScript/types/IosConfiguration';
+import { CallKitConfiguration } from 'native-bridge/TypeScript/types/CallKitConfiguration';
+import { ScreenShareToolConfiguration } from 'native-bridge/TypeScript/types/ScreenShareToolConfiguration';
+import { ChatToolConfiguration } from 'native-bridge/TypeScript/types/ChatToolConfiguration';
+import { AudioCallOptions } from 'native-bridge/TypeScript/types/AudioCallOptions';
+import { CallOptions } from 'native-bridge/TypeScript/types/CallOptions';
 
 const LINKING_ERROR =
   `The package 'video-react-native-module' doesn't seem to be linked. Make sure: \n\n` +
@@ -52,46 +59,11 @@ const VideoNativeEmitter = NativeModules.VideoNativeEmitter
 /**
  * KaleyraVideo
  */
-export default class KaleyraVideo {
+class KaleyraVideo {
   /**
    * <b>To create an instance of the Kaleyra Video invoke the [[configure]] method</b>
    */
   static instance: KaleyraVideo;
-
-  /**
-   * Available call types
-   */
-  static callTypes = CallType;
-
-  /**
-   * Available audio call types
-   */
-  static audioCallTypes = AudioCallType;
-
-  /**
-   * Available recording types
-   */
-  static recordingTypes = RecordingType;
-
-  /**
-   * Available environments
-   */
-  static environments = Environments;
-
-  /**
-   * Available regions
-   */
-  static regions = Regions;
-
-  /**
-   * Available display modes
-   */
-  static callDisplayModes = CallDisplayMode;
-
-  /**
-   * Available voip Handling Strategies
-   */
-  static voipHandlingStrategies = VoipHandlingStrategy;
 
   private readonly eventEmitter: ReactNativeEventEmitter;
 
@@ -345,3 +317,27 @@ export default class KaleyraVideo {
     return VideoNativeModuleBridge.getCurrentVoIPPushToken();
   }
 }
+
+export {
+  KaleyraVideo,
+  KaleyraVideoConfiguration,
+  CreateCallOptions,
+  Tools,
+  ScreenShareToolConfiguration,
+  ChatToolConfiguration,
+  AudioCallOptions,
+  AudioCallType,
+  CallOptions,
+  RecordingType,
+  IosConfiguration,
+  CallKitConfiguration,
+  VoipHandlingStrategy,
+  CallType,
+  Regions,
+  UserDetails,
+  UserDetailsFormat,
+  CallDisplayMode,
+  Session,
+  Environments,
+  Events,
+};

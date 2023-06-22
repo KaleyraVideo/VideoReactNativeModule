@@ -1,9 +1,20 @@
 {
+  "include": [
+    "index.ts",
+    "src",
+    "android",
+    "ios",
+    "native-bridge"
+  ],
+  "rootDirs": ["src", "native-bridge"],
+  "exclude": ["example"],
   "compilerOptions": {
+    "outDir": "lib",
     "baseUrl": "./",
     "paths": {
       "video-react-native-module": ["./src/KaleyraVideo"]
     },
+
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
@@ -22,6 +33,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": false,
+    "noEmit": false,
     "target": "esnext"
   }
 }
