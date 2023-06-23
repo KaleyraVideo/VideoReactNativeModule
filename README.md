@@ -43,9 +43,9 @@ The first thing you need to do is to configure the module specifying your keys a
 
 ```javascript
 var kaleyraVideo = KaleyraVideo.configure({
-    environment: KaleyraVideo.environments.sandbox(), // production()
+    environment: Environments.sandbox(), // production()
     appID: 'mAppId_xxx', // your mobile appId
-    region: KaleyraVideo.regions.europe(), // india(), us()
+    region: Regions.europe(), // india(), us()
     logEnabled: true, // enable the logger
     tools: { // by default no tools will be set
         chat: {
