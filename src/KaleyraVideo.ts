@@ -30,31 +30,31 @@ import { CallOptions } from '../native-bridge/TypeScript/types/CallOptions';
 
 const LINKING_ERROR =
   `The package 'video-react-native-module' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
+  Platform.select({ ios: '- You have run \'pod install\'\n', default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
 const VideoNativeModuleBridge = NativeModules.VideoNativeModule
   ? NativeModules.VideoNativeModule
   : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    },
+  );
 
 const VideoNativeEmitter = NativeModules.VideoNativeEmitter
   ? NativeModules.VideoNativeEmitter
   : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    },
+  );
 
 /**
  * KaleyraVideo
@@ -91,7 +91,7 @@ class KaleyraVideo {
 
     VideoNativeModuleBridge.configure(JSON.stringify(configuration));
     this.instance = new KaleyraVideo(
-      new ReactNativeEventEmitter(VideoNativeEmitter)
+      new ReactNativeEventEmitter(VideoNativeEmitter),
     );
 
     return this.instance;
@@ -128,21 +128,21 @@ class KaleyraVideo {
         (token) => {
           const response = AccessTokenResponse.success(
             accessTokenRequest.requestID,
-            token
+            token,
           );
           VideoNativeModuleBridge.setAccessTokenResponse(
-            JSON.stringify(response)
+            JSON.stringify(response),
           );
         },
         (err: string) => {
           const response = AccessTokenResponse.failed(
             accessTokenRequest.requestID,
-            err
+            err,
           );
           VideoNativeModuleBridge.setAccessTokenResponse(
-            JSON.stringify(response)
+            JSON.stringify(response),
           );
-        }
+        },
       );
     });
     VideoNativeModuleBridge.connect(session.userID);
@@ -216,7 +216,7 @@ class KaleyraVideo {
   setDisplayModeForCurrentCall(mode: CallDisplayMode) {
     if (KaleyraVideo._isAndroid()) {
       VideoNativeModuleBridge.setDisplayModeForCurrentCall(
-        JSON.stringify(mode)
+        JSON.stringify(mode),
       );
     } else {
       console.warn('Not supported by ', Platform.OS, ' platform.');
@@ -232,7 +232,7 @@ class KaleyraVideo {
     if (url === '' || url === 'undefined') {
       throw new IllegalArgumentError('Invalid url!');
     }
-    VideoNativeModuleBridge.startCallUrl(url);
+    VideoNativeModuleBridge.startCallUrl(JSON.stringify(url));
   }
 
   // noinspection JSMethodCanBeStatic
@@ -278,7 +278,7 @@ class KaleyraVideo {
     }
 
     VideoNativeModuleBridge.handlePushNotificationPayload(
-      JSON.stringify(payload)
+      JSON.stringify(payload),
     );
   }
 
