@@ -1,11 +1,12 @@
 {
-  "name": "@bandyer/video-react-native-module",
+  "name": "@kaleyra/video-react-native-module",
   "version": "1.0.0",
   "description": "Kaleyra Video module for react native.",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
   "react-native": "index.ts",
+  "source": "index.ts",
   "files": [
     "src",
     "lib",
@@ -33,7 +34,7 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepack": "rm -rf ./lib && tsc --build ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "prepack": "yarn buildJs && rm -rf ./lib && tsc --build ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install && yarn example pods",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build",

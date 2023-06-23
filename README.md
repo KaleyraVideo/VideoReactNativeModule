@@ -2,7 +2,7 @@
 
 # Kaleyra Video React Native Module
 
-[![npm version](https://img.shields.io/npm/v/@bandyer/video-react-native-module?color=brightgreen&label=npm%20package)][LinkNpm]
+[![npm version](https://img.shields.io/npm/v/@kaleyra/video-react-native-module?color=brightgreen&label=npm%20package)][LinkNpm]
 
 ## Our machine development setup
 
@@ -13,18 +13,32 @@ react >= 0.71.x
 yarn >= 1.22.17
 ```
 
+## How to run the example
+
+Execute the following commands from the repository root folder
+
+```shell
+yarn
+yarn prepack
+yarn link
+cd example
+# nano .env use your own keys
+yarn link @kaleyra/video-react-native-module
+yarn android/ios
+```
+
 ## How to install the module:
 
 Open the **terminal** in your React-Native-App folder and run the following commands
 
-```sh
-npm install @bandyer/video-react-native-module
+```shell
+npm install @kaleyra/video-react-native-module
 ```
 
 ## How to remove the module:
 
-```sh
-npm uninstall @bandyer/video-react-native-module
+```shell
+npm uninstall @kaleyra/video-react-native-module
 ```
 
 ## How to use the Kaleyra Video module in your React Native app
@@ -271,7 +285,7 @@ Example of acceptable payload
 The API documentation is available on the github pages link:
 [https://kaleyravideo.github.io/VideoReactNativeModule/][TSDoc]
 
-[LinkNpm]: https://www.npmjs.com/package/@bandyer/video-react-native-module
+[LinkNpm]: https://www.npmjs.com/package/@kaleyra/video-react-native-module
 [BroadcastAchor]: #ios-broadcast-screen-sharing
 [BroadcastSceenSharing]: https://github.com/Bandyer/Bandyer-iOS-SDK/wiki/Screen-sharing#broadcast-screen-sharing
 [EventsDoc]: https://kaleyravideo.github.io/VideoReactNativeModule/interfaces/src_events_Events.Events.html

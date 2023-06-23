@@ -5,14 +5,11 @@ import * as React from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 import { APP_ID, ENVIRONMENT, REGION } from '@env';
-import { AudioCallType } from '../../native-bridge/TypeScript/types/AudioCallType';
-import { RecordingType } from '../../native-bridge/TypeScript/types/RecordingType';
 import { getAccessToken } from './useAccessToken';
-import { CallType } from '../../native-bridge/TypeScript/types/CallType';
 import { Image, Platform, View } from 'react-native';
 import { styles } from './styles/styles';
 import { Button, TextInput } from 'react-native-paper';
-import { Environments, KaleyraVideo, Regions } from '@bandyer/video-react-native-module';
+import { Environments, KaleyraVideo, Regions, RecordingType, AudioCallType, CallType } from '@kaleyra/video-react-native-module';
 import { NotificationProxy } from './NotificationProxy';
 import { HmsPushMessaging } from '@hmscore/react-native-hms-push';
 import { UserStorage } from './useStorage';
