@@ -20,13 +20,13 @@ import { AccessTokenResponse } from '../native-bridge/TypeScript/types/AccessTok
 import { Events as HybridEvents } from '../native-bridge/TypeScript/Events';
 import { ReactNativeEventEmitter } from './ReactNativeEventEmitter';
 import type { Events } from './events/Events';
-import { Tools } from 'native-bridge/TypeScript/types/Tools';
-import { IosConfiguration } from 'native-bridge/TypeScript/types/IosConfiguration';
-import { CallKitConfiguration } from 'native-bridge/TypeScript/types/CallKitConfiguration';
-import { ScreenShareToolConfiguration } from 'native-bridge/TypeScript/types/ScreenShareToolConfiguration';
-import { ChatToolConfiguration } from 'native-bridge/TypeScript/types/ChatToolConfiguration';
-import { AudioCallOptions } from 'native-bridge/TypeScript/types/AudioCallOptions';
-import { CallOptions } from 'native-bridge/TypeScript/types/CallOptions';
+import { Tools } from '../native-bridge/TypeScript/types/Tools';
+import { IosConfiguration } from '../native-bridge/TypeScript/types/IosConfiguration';
+import { CallKitConfiguration } from '../native-bridge/TypeScript/types/CallKitConfiguration';
+import { ScreenShareToolConfiguration } from '../native-bridge/TypeScript/types/ScreenShareToolConfiguration';
+import { ChatToolConfiguration } from '../native-bridge/TypeScript/types/ChatToolConfiguration';
+import { AudioCallOptions } from '../native-bridge/TypeScript/types/AudioCallOptions';
+import { CallOptions } from '../native-bridge/TypeScript/types/CallOptions';
 
 const LINKING_ERROR =
   `The package 'video-react-native-module' doesn't seem to be linked. Make sure: \n\n` +
