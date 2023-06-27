@@ -105,17 +105,42 @@ Example:
 kaleyraVideo.events.onCallModuleStatusChanged = (status: String) => {};
 ```
 
-## Listening for VoIP push token
+## iOS - VoIP Notifications
 
+### Setup required for VoIP notifications
+
+If you desire to use VoIP notifications on iOS platform as first thing you should configure kaleyraVideo passing a config object as follow:
+
+```javascript
+var kaleyraVideo = KaleyraVideo.configure({
+    [...]
+    iosConfig: {
+        voipHandlingStrategy: VoipHandlingStrategy.AUTOMATIC,
+        [...]
+    }
+});
+```
+
+The iOS project requires a little setup for use VoIP notifications. [Here][iOSProjectSetup] you can find a description of how the project should be configured.
+
+### Listening for VoIP push token
 In order to get your device push token, you must listen for the **KaleyraVideo.events.iOSVoipPushTokenUpdated** event registering a callback as follows:
 
 ```javascript
+// The token is received in this listener only after calling kaleyraVideo.connect(_)
 kaleyraVideo.events.oniOSVoipPushTokenUpdated = (token: string) => {
     // register the VoIP push token on your server
 });
 ```
-The token provided in the callback is the **string** representation of your device token.
+**Warning:** Make sure this listener is attached before calling kaleyraVideo.connect(_), otherwise the event reporting the device token could be missed.
+
+The token provided in the callback is the **string** representation of your device token. 
 Here's an example of a device token: **dec105f879924349fd2fa9aa8bb8b70431d5f41d57bfa8e31a5d80a629774fd9**
+
+### VoIP notification payload
+
+[Here][iOSVoIPPayload] you can find an example of how your VoIP notifications payload should be structured.
+
 
 ## Module connect
 
@@ -288,5 +313,7 @@ The API documentation is available on the github pages link:
 [LinkNpm]: https://www.npmjs.com/package/@kaleyra/video-react-native-module
 [BroadcastAchor]: #ios-broadcast-screen-sharing
 [BroadcastSceenSharing]: https://github.com/Bandyer/Bandyer-iOS-SDK/wiki/Screen-sharing#broadcast-screen-sharing
+[iOSProjectSetup]: https://github.com/Bandyer/Bandyer-iOS-SDK/wiki/VOIP-notifications#project-setup
+[iOSVoIPPayload]: https://github.com/Bandyer/Bandyer-iOS-SDK/wiki/VOIP-notifications#notification-payload-key-path
 [EventsDoc]: https://kaleyravideo.github.io/VideoReactNativeModule/interfaces/src_events_Events.Events.html
 [TSDoc]: https://kaleyravideo.github.io/VideoReactNativeModule/
