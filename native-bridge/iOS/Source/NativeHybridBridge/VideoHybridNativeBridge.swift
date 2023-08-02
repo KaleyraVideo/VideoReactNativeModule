@@ -83,7 +83,6 @@ class VideoHybridNativeBridge {
 
     func connect(userID: String) throws {
         try checkIsConfigured()
-
         let provider = accessTokenProviderFactory()
         sdk.connect(Bandyer.Session(userId: userID, tokenProvider: provider))
     }
@@ -120,7 +119,6 @@ class VideoHybridNativeBridge {
         try checkIsConfigured()
 
         sdk.disconnect()
-        reporter.stop()
     }
 
     func addUsersDetails(_ details: [UserDetails]) {

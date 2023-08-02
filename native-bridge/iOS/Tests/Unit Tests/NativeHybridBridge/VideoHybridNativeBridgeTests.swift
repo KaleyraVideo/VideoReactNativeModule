@@ -258,11 +258,11 @@ final class VideoHybridNativeBridgeTests: UnitTestCase {
         assertThat(sut.sdkSpy.disconnectInvocations, hasCount(1))
     }
 
-    func testDisconnectShouldStopEventReporter() throws {
+    func testDisconnectShouldNotStopEventReporter() throws {
         try configureSUT()
         try sut.disconnect()
 
-        assertThat(sut.reporterSpy.stopInvocations, hasCount(1))
+        assertThat(sut.reporterSpy.stopInvocations, hasCount(0))
     }
 
     // MARK: - Add UsersDetails
