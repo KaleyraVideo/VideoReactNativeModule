@@ -1,5 +1,5 @@
 PODS:
-  - Bandyer (3.6.3)
+  - Bandyer (3.9.0)
   - BandyerBroadcastExtension (1.2.0)
   - boost (1.76.0)
   - DoubleConversion (1.1.6)
@@ -424,8 +424,8 @@ PODS:
     - FirebaseCoreExtension (= 10.7.0)
     - React-Core
     - RNFBApp
-  - video-react-native-module (1.0.0):
-    - Bandyer (~> 3.6.3)
+  - video-react-native-module (1.0.1):
+    - Bandyer (~> 3.9.0)
     - React-Core
   - Yoga (1.14.0)
 
@@ -574,7 +574,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Bandyer: d9f2aa82328210b5fc088b913e1cd7084cf96004
+  Bandyer: 64a80517e7e1aff3ea49e0c32c1872e80fac17b6
   BandyerBroadcastExtension: 975d1a3694d56c879b0545c7e9f5df8467cda209
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -626,9 +626,9 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 475a4c447168d0ad4c807e48ef5e0963a0f4eb1b
   RNFBApp: 0d8bf86673bbad0524d1ceac3944d71ccf48a0e4
   RNFBMessaging: 4b8cb1215465bacca36d0fcfc2f51e7e2aa1bc91
-  video-react-native-module: 4cb9177c9b71e59542a865970ce043434c0578f7
+  video-react-native-module: 9f60a117be9b947b493ba672dc5efd916d46e561
   Yoga: 540948b36b46e9469992c4d30ddcc21110b8afe5
 
 PODFILE CHECKSUM: a65e60a34b77437b055c7dea246414c728033632
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.2
