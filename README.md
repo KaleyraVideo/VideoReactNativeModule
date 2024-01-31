@@ -39,7 +39,7 @@ npm install @kaleyra/video-react-native-module
 
 In case your application already provides the WebRTC framework in a third party module, a conflict may arise when trying to install the depedencies through Cocoapods.
 In order to resolve the conflict you can download and install the Kaleyra Video iOS framework as a standalone package.
-To enable the standalone framework you must change your application's Podfile adding the `$KaleyraNoWebRTC` variable before the first target definition.
+To enable the standalone framework you must change your application's Podfile declaring the `$KaleyraNoWebRTC` variable before the first target definition. You can give whatever value you want to the variable as long as it is defined before the target definitions.
 
 ```ruby
 platform :ios, min_ios_version_supported
@@ -48,7 +48,7 @@ prepare_react_native_project!
 # use_frameworks! is required for using Bandyer framework, linkage static is required by React Native instead.
 use_frameworks! :linkage => :static
 
-$KaleyraNoWebRTC = "yes"
+$KaleyraNoWebRTC = ''
 
 target 'KaleyraVideoReact' do
   config = use_native_modules!
