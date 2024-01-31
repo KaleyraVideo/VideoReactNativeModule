@@ -35,6 +35,33 @@ Open the **terminal** in your React-Native-App folder and run the following comm
 npm install @kaleyra/video-react-native-module
 ```
 
+### Standalone iOS framework
+
+In case your application already provides the WebRTC framework in a third party module, a conflict may arise when trying to install the depedencies through Cocoapods.
+In order to resolve the conflict you can download and install the Kaleyra Video iOS framework as a standalone package.
+To enable the standalone framework you must change your application's Podfile adding the `$KaleyraNoWebRTC` variable before the first target definition.
+
+```ruby
+platform :ios, min_ios_version_supported
+prepare_react_native_project!
+
+# use_frameworks! is required for using Bandyer framework, linkage static is required by React Native instead.
+use_frameworks! :linkage => :static
+
+$KaleyraNoWebRTC = "yes"
+
+target 'KaleyraVideoReact' do
+  config = use_native_modules!
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+[...]
+end
+```
+
+> [!CAUTION]
+> Use the standalone framework only as a last resort in case you have a WebRTC framework conflict. Because we cannot guarantee that the WebRTC framework you are using is compatible with our SDK, you are responsible for assess the compatibility with our module. However, WebRTC versions greater than or equal to M100 should work fine.
+
 ## How to remove the module:
 
 ```shell
