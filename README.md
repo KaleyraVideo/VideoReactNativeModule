@@ -35,6 +35,10 @@ Open the **terminal** in your React-Native-App folder and run the following comm
 npm install @kaleyra/video-react-native-module
 ```
 
+# Android additional configuration may be required (depends on your integration)
+ -  add tools:replace="android:allowBackup" to AndroidManifest.xml. See here for an [example](https://github.com/KaleyraVideo/VideoReactNativeModule/blob/main/example/android/app/src/main/AndroidManifest.xml#L8)
+ -  add maven { url 'https://maven.bandyer.com/releases' } in build.gradle. See here for an [example](https://github.com/KaleyraVideo/VideoReactNativeModule/blob/1599d0f355e4a699a92404c450102e519cfe2866/example/android/build.gradle#L32)
+
 ### Standalone iOS framework
 
 In case your application already provides the WebRTC framework in a third party module, a conflict may arise when trying to install the depedencies through Cocoapods.
