@@ -24,7 +24,9 @@ yarn link
 cd example
 # nano .env use your own keys
 yarn link @kaleyra/video-react-native-module
-yarn android/ios
+yarn pods
+yarn ios
+yarn android
 ```
 
 ## How to install the module:
@@ -165,7 +167,7 @@ kaleyraVideo.events.oniOSVoipPushTokenUpdated = (token: string) => {
 ```
 **Warning:** Make sure this listener is attached before calling kaleyraVideo.connect(_), otherwise the event reporting the device token could be missed.
 
-The token provided in the callback is the **string** representation of your device token. 
+The token provided in the callback is the **string** representation of your device token.
 Here's an example of a device token: **dec105f879924349fd2fa9aa8bb8b70431d5f41d57bfa8e31a5d80a629774fd9**
 
 ### VoIP notification payload
@@ -340,7 +342,7 @@ Example of acceptable payload
 }
 ```
 
-## Proguard 
+## Proguard
 ```groovy
 # Bandyer now Kaleyra proprietary SDK
 -keep class com.bandyer.** { *; }
