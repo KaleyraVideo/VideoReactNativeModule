@@ -29,6 +29,11 @@ yarn ios
 yarn android
 ```
 
+### Reset react native build cache
+```shell
+react-native start --reset-cache
+```
+
 ## How to install the module:
 
 Open the **terminal** in your React-Native-App folder and run the following commands
