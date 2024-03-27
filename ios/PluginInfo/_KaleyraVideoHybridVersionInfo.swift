@@ -7,7 +7,7 @@ import Foundation
 class _KaleyraVideoHybridVersionInfo: NSObject {
 
     @objc
-    static let krvVersion: String = "1.2.2"
+    static let krvVersion: String = "1.2.3"
 
     @objc
     static let krvPlatform: String = "react"
