@@ -136,6 +136,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				F9EE71452A3B46140089EA27 /* KaleyraVideoConfig.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -206,7 +207,6 @@
 				F9EE71442A3B452B0089EA27 /* BroadcastExtension.entitlements */,
 				F9EE713A2A3B44890089EA27 /* SampleHandler.swift */,
 				F9EE713C2A3B44890089EA27 /* Info.plist */,
-				F9EE71452A3B46140089EA27 /* KaleyraVideoConfig.plist */,
 			);
 			path = BroadcastExtension;
 			sourceTree = "<group>";
