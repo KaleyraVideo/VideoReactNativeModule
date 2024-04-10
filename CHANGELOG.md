@@ -1,3 +1,11 @@
+## 1.3.3
+
+- chore: update ios to 3.11.1
+
+## 1.3.2
+
+- chore: update android sdk dep
+
 ## 1.3.1
 
 - git subrepo pull (merge) native-bridge
