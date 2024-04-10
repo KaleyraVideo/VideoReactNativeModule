@@ -48,16 +48,13 @@ npm install @kaleyra/video-react-native-module
 
 ### Standalone iOS framework
 
-In case your application already provides the WebRTC framework in a third party module, a conflict may arise when trying to install the depedencies through Cocoapods.
+In case your application already provides the WebRTC framework in a third party module, a conflict may arise when trying to install the dependencies through Cocoapods.
 In order to resolve the conflict you can download and install the Kaleyra Video iOS framework as a standalone package.
 To enable the standalone framework you must change your application's Podfile declaring the `$KaleyraNoWebRTC` variable before the first target definition. You can give whatever value you want to the variable as long as it is defined before the target definitions.
 
 ```ruby
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
-
-# use_frameworks! is required for using Bandyer framework, linkage static is required by React Native instead.
-use_frameworks! :linkage => :static
 
 $KaleyraNoWebRTC = ''
 
@@ -168,7 +165,7 @@ In order to get your device push token, you must listen for the **KaleyraVideo.e
 // The token is received in this listener only after calling kaleyraVideo.connect(_)
 kaleyraVideo.events.oniOSVoipPushTokenUpdated = (token: string) => {
     // register the VoIP push token on your server
-});
+};
 ```
 **Warning:** Make sure this listener is attached before calling kaleyraVideo.connect(_), otherwise the event reporting the device token could be missed.
 
@@ -280,14 +277,6 @@ To verify a user for the current call.
 kaleyraVideo.verifyCurrentCall(true);
 ```
 
-## iOS Podfile Setup
-
-Please pay attention to the Podfile setup for your iOS application. Is required to add this to your Podfile:
-
-```ruby
-use_frameworks! :linkage => :static
-```
-
 ## iOS Broadcast Screen sharing
 
 To enable whole device screen share is required and additional setup.
@@ -295,14 +284,23 @@ Open the iOS Xcode project of your React Native application and follow [this gui
 After completing the procedure described in the guide above you need to add to your Podfile this lines:
 
 ```ruby
-target 'BroadcastExtension' do
-  use_frameworks! :linkage => :dynamic
 
+target 'KaleyraVideoReact' do
+  pod 'BandyerBroadcastExtension'
+  ...
+end
+
+target 'BroadcastExtension' do
   pod 'BandyerBroadcastExtension'
 end
 ```
 
-Furthermore, to allow a correct configuration of the SDK it is necessary to create a file called "KaleyraVideoConfig.plist" and add it to the same target of the application. This file must have the following content:
+Furthermore, to allow a correct configuration of the SDK it is necessary to:
+ - create a file called "KaleyraVideoConfig.plist"
+ - add it to the same target of the application. (and NOT to the Extension)
+ - set Extension Minimum Deployments to match the version of the Application
+
+This file must have the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -323,9 +321,11 @@ Furthermore, to allow a correct configuration of the SDK it is necessary to crea
 ## iOS Notifications
 The module supports **on_call_incoming** notification.
 You will need to set the **voipHandlingStrategy** and subscribe to **iOSVoipPushTokenUpdated** event to receive the voip token to use on your backend to notify the plugin.
+ > Be aware that notifications VOIP notifications are different compared to push. They must be always handled by ensuring the invocation of the configure and connect methods in index.js or App.js.
 
 ## Android Notifications
 Supports only **on_call_incoming** and **on_message_sent** notification types.
+ > Be aware that notifications require **HIGH priority**
 
 ```javascript
 kaleyraVideo.handlePushNotificationPayload(payload);
