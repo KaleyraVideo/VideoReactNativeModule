@@ -4,26 +4,32 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+
 # use_frameworks! is required for using Bandyer framework, linkage static is required by React Native instead.
-use_frameworks! :linkage => :static
 
 target 'KaleyraVideoReact' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
   flags = get_default_flags()
+  pod 'BandyerBroadcastExtension'
+
+   pod 'Firebase', :modular_headers => true
+   pod 'FirebaseCoreInternal', :modular_headers => true
+   pod 'GoogleUtilities', :modular_headers => true
+   pod 'FirebaseCore', :modular_headers => true
 
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
     # Upcoming versions of React Native may rely on get_default_flags(), but
     # we make it explicit here to aid in the React Native upgrade process.
-    :hermes_enabled => flags[:hermes_enabled],
+    :hermes_enabled => false,
     :fabric_enabled => flags[:fabric_enabled],
     #
     # Flipper will not work with use_frameworks! and
     # we disable it the next line.
-    :flipper_configuration => FlipperConfiguration.disabled,
+    :flipper_configuration => FlipperConfiguration.enabled,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
@@ -51,7 +57,5 @@ target 'KaleyraVideoReact' do
 end
 
 target 'BroadcastExtension' do
-  use_frameworks! :linkage => :dynamic
-
   pod 'BandyerBroadcastExtension'
 end
