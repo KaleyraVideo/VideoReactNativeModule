@@ -1,4 +1,7 @@
 {
   "name": "KaleyraVideoReact",
-  "displayName": "KaleyraVideoReact"
+  "displayName": "KaleyraVideoReact",
+  "android": {
+    "package": "com.kaleyra.videoReactExample"
+  }
 }

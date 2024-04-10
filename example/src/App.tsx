@@ -81,12 +81,14 @@ const connect = (user: string) => {
       userID: 'kri1',
       nickName: 'Kristiyan1',
     },
-
     {
       userID: 'kri3',
       nickName: 'Kristiyan3',
     },
   ]);
+
+  kaleyraVideo.setUserDetailsFormat({default:"${nickName}"})
+
 };
 const disconnect = () => kaleyraVideo.disconnect();
 const call = (participants: string[]) => {
