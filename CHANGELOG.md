@@ -1,3 +1,9 @@
+## 1.4.0
+
+- This release fixes a bug on iOS platform that was reporting an incoming call as "Unknown" when no UserDetails and no format was set.
+- chore: update ios to 3.12.0
+- chore: update android sdk dep to 3.9.2
+
 ## 1.3.3
 
 - chore: update ios to 3.11.1
