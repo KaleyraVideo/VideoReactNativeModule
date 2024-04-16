@@ -1,9 +1,9 @@
 PODS:
-  - Bandyer (3.12.0):
-    - Bandyer/Core (= 3.12.0)
-    - Bandyer/WebRTC (= 3.12.0)
-  - Bandyer/Core (3.12.0)
-  - Bandyer/WebRTC (3.12.0)
+  - Bandyer (3.12.1):
+    - Bandyer/Core (= 3.12.1)
+    - Bandyer/WebRTC (= 3.12.1)
+  - Bandyer/Core (3.12.1)
+  - Bandyer/WebRTC (3.12.1)
   - BandyerBroadcastExtension (1.2.0)
   - boost (1.76.0)
   - CocoaAsyncSocket (7.6.5)
@@ -516,8 +516,8 @@ PODS:
     - React-Core
     - RNFBApp
   - SocketRocket (0.6.1)
-  - video-react-native-module (1.3.3):
-    - Bandyer (~> 3.12.0)
+  - video-react-native-module (1.4.0):
+    - Bandyer (~> 3.12.1)
     - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -706,7 +706,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Bandyer: 9a30140443ee216dee7849173ffd374795598373
+  Bandyer: 85a49f0c6c3e2084075991dc05a37ae3b54ca9d8
   BandyerBroadcastExtension: 975d1a3694d56c879b0545c7e9f5df8467cda209
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -771,7 +771,7 @@ SPEC CHECKSUMS:
   RNFBApp: 0d8bf86673bbad0524d1ceac3944d71ccf48a0e4
   RNFBMessaging: 4b8cb1215465bacca36d0fcfc2f51e7e2aa1bc91
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  video-react-native-module: cbe56cb09d3751d3a3a962614c07ee0102ec00c2
+  video-react-native-module: 14e128c544eb707807d98260c818839f812495bc
   Yoga: 540948b36b46e9469992c4d30ddcc21110b8afe5
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
