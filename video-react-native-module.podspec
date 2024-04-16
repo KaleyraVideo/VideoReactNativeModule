@@ -19,9 +19,9 @@ Pod::Spec.new do |s|
   s.dependency "React-Core"
 
   if defined?($KaleyraNoWebRTC)
-    s.dependency "Bandyer/Core", "~> 3.12.0"
+    s.dependency "Bandyer/Core", "~> 3.12.1"
   else
-    s.dependency "Bandyer", "~> 3.12.0"
+    s.dependency "Bandyer", "~> 3.12.1"
   end
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
