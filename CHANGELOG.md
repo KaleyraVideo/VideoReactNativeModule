@@ -1,3 +1,7 @@
+## 1.4.1
+
+- chore: update ios to 3.12.1
+
 ## 1.4.0
 
 - This release fixes a bug on iOS platform that was reporting an incoming call as "Unknown" when no UserDetails and no format was set.
