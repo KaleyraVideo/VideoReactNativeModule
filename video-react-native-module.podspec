@@ -18,10 +18,13 @@ Pod::Spec.new do |s|
 
   s.dependency "React-Core"
 
+  podfile = Pod::Podfile.from_file(Pathname.new('native-bridge/iOS/Podfile'))
+  pod = podfile.dependencies.select { |pod| pod.name == "Bandyer" }
+
   if defined?($KaleyraNoWebRTC)
-    s.dependency "Bandyer/Core", "~> 3.12.1"
+    s.dependency "Bandyer/Core", pod[0].requirement.to_s
   else
-    s.dependency "Bandyer", "~> 3.12.1"
+    s.dependency "Bandyer", pod[0].requirement.to_s
   end
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
