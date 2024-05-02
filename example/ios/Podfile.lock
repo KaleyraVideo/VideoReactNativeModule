@@ -516,7 +516,7 @@ PODS:
     - React-Core
     - RNFBApp
   - SocketRocket (0.6.1)
-  - video-react-native-module (1.4.0):
+  - video-react-native-module (1.4.1):
     - Bandyer (~> 3.12.1)
     - React-Core
   - Yoga (1.14.0)
@@ -771,10 +771,10 @@ SPEC CHECKSUMS:
   RNFBApp: 0d8bf86673bbad0524d1ceac3944d71ccf48a0e4
   RNFBMessaging: 4b8cb1215465bacca36d0fcfc2f51e7e2aa1bc91
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  video-react-native-module: 14e128c544eb707807d98260c818839f812495bc
+  video-react-native-module: a7b031fb8f1744a82f540744351cda9ba1c114dd
   Yoga: 540948b36b46e9469992c4d30ddcc21110b8afe5
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 72b260ad79283efb25ef08dfbadf46dcfb5a851a
+PODFILE CHECKSUM: f4aa1aada5ae1d1bf884771bb8a6369f9e2e386d
 
 COCOAPODS: 1.15.2
