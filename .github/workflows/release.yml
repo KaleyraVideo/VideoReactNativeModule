@@ -71,7 +71,7 @@ jobs:
         id: package-version
         run: |
           PACKAGE_VERSION=$(npm pkg get version | xargs)
-          "current-version=${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
+          echo "current-version=${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
