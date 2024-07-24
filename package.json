@@ -48,9 +48,9 @@
     "doc": "typedoc",
     "openDoc": "open ./docs/index.html",
     "version": "npm run doc && python3 update_plugin_version.py && npm run buildJs && git add . ",
-    "major": "npm version major -m \"chore: Updated to version %s\"",
-    "minor": "npm version minor -m \"chore: Updated to version %s\"",
-    "patch": "npm version patch -m \"chore: Updated to version %s\""
+    "major": "npm version major -m \"chore: updated to version %s\"",
+    "minor": "npm version minor -m \"chore: updated to version %s\"",
+    "patch": "npm version patch -m \"chore: updated to version %s\""
   },
   "keywords": [
     "react-native",
