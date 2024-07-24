@@ -27,6 +27,29 @@ jobs:
     
     - name: Setup
       uses: ./.github/actions/setup
+
+    - name: Setting up environment
+      run: |
+          pip install pyyaml
+    
+    - name: Cache Homebrew Bundler RubyGems
+      id: cache
+      uses: actions/cache@v3
+      with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+    
+    - name: Set up Homebrew
+      id: set-up-homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+    
+    - name: Install Homebrew Bundler RubyGems
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: brew install git-subrepo
+    
+    - name: Update subrepo
+      run: git subrepo pull ios/native-bridge
     
     - name: Update package version
       run: npm run ${{ github.event.inputs.release_kind }}
