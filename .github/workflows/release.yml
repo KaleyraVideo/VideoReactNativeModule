@@ -67,6 +67,15 @@ jobs:
       - name: Update package version
         run: npm run ${{ github.event.inputs.release_kind }}
 
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+            commit_message: "chore: updated to version ${{ steps.package-version.outputs.current-version }}"
+            tagging_message: "v${{ steps.package-version.outputs.current-version }}"
+
       - name: Remove "private" constraint from package.json file
         run: |
           sed -i '' 's/\"private\": true/\"private\": false/g' package.json
