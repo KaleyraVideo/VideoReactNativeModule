@@ -8,10 +8,10 @@ on:
         description: What kind of release do you want to do?
         required: true
         options:
-        -
-        - patch
-        - minor
-        - major
+          -
+          - patch
+          - minor
+          - major
 
 jobs:
   release-module:
@@ -20,47 +20,59 @@ jobs:
       name: release_environment
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 16
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: VideoFlutterPlugin
 
-    - name: Setup
-      uses: ./.github/actions/setup
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
-    - name: Setting up environment
-      run: |
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Setting up environment
+        run: |
           pip install pyyaml
 
-    - name: Cache Homebrew Bundler RubyGems
-      id: cache
-      uses: actions/cache@v3
-      with:
+      - name: Cache Homebrew Bundler RubyGems
+        id: cache
+        uses: actions/cache@v3
+        with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
 
-    - name: Set up Homebrew
-      id: set-up-homebrew
-      uses: Homebrew/actions/setup-homebrew@master
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
-    - name: Install Homebrew Bundler RubyGems
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: brew install git-subrepo
+      - name: Install Homebrew Bundler RubyGems
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: brew install git-subrepo
 
-    - name: Update subrepo
-      run: |
-        git subrepo pull native-bridge -m "chore: update native-bridge"
+      - name: Update subrepo
+        run: |
+          git subrepo pull native-bridge -m "chore: update native-bridge"
 
-    - name: Update package version
-      run: npm run ${{ github.event.inputs.release_kind }}
+      - name: Update package version
+        run: npm run ${{ github.event.inputs.release_kind }}
 
-    - name: Remove "private" constraint from package.json file
-      run: |
-        sed -i '' 's/\"private\": true/\"private\": false/g' package.json
-        cat package.json
+      - name: Remove "private" constraint from package.json file
+        run: |
+          sed -i '' 's/\"private\": true/\"private\": false/g' package.json
+          cat package.json
 
-    - name: Publish to npm
-      run: |
-        npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_API_KEY }}"
-        npm publish
+      - name: Publish to npm
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_API_KEY }}"
+          npm publish
