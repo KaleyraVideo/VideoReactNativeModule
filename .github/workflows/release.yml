@@ -69,7 +69,9 @@ jobs:
 
       - name: get-npm-version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
+        run: |
+          PACKAGE_VERSION=$(npm pkg get version | xargs)
+          "current-version=${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
