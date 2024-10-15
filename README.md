@@ -210,6 +210,12 @@ kaleyraVideo.startCall({
 });
 ```
 
+##### Start call with URL
+
+```javascript
+kaleyraVideo.startCallFrom("https://");
+```
+
 ## Start a chat
 
 To make a chat you need to specify some params.
