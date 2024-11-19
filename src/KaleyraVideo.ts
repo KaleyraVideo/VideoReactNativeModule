@@ -242,22 +242,6 @@ class KaleyraVideo {
   }
 
   /**
-   * Call this method to handle a notification!
-   *
-   * @param payload notification data payload as String
-   * @throws IllegalArgumentError
-   */
-  handlePushNotificationPayload(payload: string) {
-    if (payload === '' || payload === 'undefined') {
-      throw new IllegalArgumentError('Expected a not empty payload!');
-    }
-
-    VideoNativeModuleBridge.handlePushNotificationPayload(
-      JSON.stringify(payload),
-    );
-  }
-
-  /**
    * Open chat
    * @param userID user you want to chat with
    * @throws IllegalArgumentError

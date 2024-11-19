@@ -45,10 +45,6 @@ const kaleyraVideo = KaleyraVideo.configure({
 if (Platform.OS === 'android') {
   HmsPushMessaging.setBackgroundMessageHandler(async (dataMessage: any) => {
     const user = await UserStorage.user;
-    const payload = JSON.parse(dataMessage.data);
-    kaleyraVideo.handlePushNotificationPayload(
-      JSON.stringify(payload.kaleyra.payload),
-    );
     if (!user) return Promise.reject('user not logged');
     connect(user);
     console.log('HMS Message handled in the background!', dataMessage);
@@ -56,10 +52,6 @@ if (Platform.OS === 'android') {
   });
   messaging().setBackgroundMessageHandler(async (remoteMessage) => {
     const user = await UserStorage.user;
-    const payload = JSON.parse(remoteMessage.data!.message);
-    kaleyraVideo.handlePushNotificationPayload(
-      JSON.stringify(payload.kaleyra.payload),
-    );
     if (!user) return Promise.reject('user not logged');
     connect(user);
     console.log('FCM Message handled in the background!', remoteMessage);

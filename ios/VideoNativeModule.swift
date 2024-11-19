@@ -105,11 +105,6 @@ class VideoNativeModule: NSObject {
         bridge.removeUsersDetails()
     }
 
-    @objc(handlePushNotificationPayload:)
-    func handlePushNotificationPayload(json: String) {
-        bridge.handlePushNotificationPayload(json)
-    }
-
     @objc(startChat:)
     func startChat(userID: String) {
         perform {

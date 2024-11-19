@@ -25,8 +25,6 @@ RCT_EXTERN_METHOD(addUsersDetails:(NSString *)json)
 
 RCT_EXTERN_METHOD(removeUsersDetails)
 
-RCT_EXTERN_METHOD(handlePushNotificationPayload:(NSString *)json)
-
 RCT_EXTERN_METHOD(startChat:(NSString *)userID)
 
 RCT_EXTERN_METHOD(clearUserCache)
