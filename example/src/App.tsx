@@ -75,15 +75,15 @@ const connect = (user: string) => {
   kaleyraVideo.addUsersDetails([
     {
       userID: 'kri2',
-      nickName: 'Kristiyan2',
+      name: 'Kristiyan2',
     },
     {
       userID: 'kri1',
-      nickName: 'Kristiyan1',
+      name: 'Kristiyan1',
     },
     {
       userID: 'kri3',
-      nickName: 'Kristiyan3',
+      name: 'Kristiyan3',
     },
   ]);
 
