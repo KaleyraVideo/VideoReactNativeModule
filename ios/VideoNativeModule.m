@@ -17,8 +17,6 @@ RCT_EXTERN_METHOD(reset)
 
 RCT_EXTERN_METHOD(startCall:(NSString *)json)
 
-RCT_EXTERN_METHOD(verifyCurrentCall:(BOOL *)verify)
-
 RCT_EXTERN_METHOD(setDisplayModeForCurrentCall:(NSString *)mode)
 
 RCT_EXTERN_METHOD(startCallUrl:(NSString *)url)

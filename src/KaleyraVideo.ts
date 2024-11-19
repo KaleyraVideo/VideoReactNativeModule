@@ -194,19 +194,6 @@ class KaleyraVideo {
   }
 
   /**
-   * Verify the user for the current call
-   * @param verify true if the user is verified, false otherwise
-   * @throws IllegalArgumentError
-   */
-  verifyCurrentCall(verify: boolean) {
-    if (KaleyraVideo._isAndroid()) {
-      VideoNativeModuleBridge.verifyCurrentCall(verify);
-    } else {
-      console.warn('Not yet supported on ', Platform.OS, ' platform.');
-    }
-  }
-
-  /**
    * Set the UI display mode for the current call
    * @param mode FOREGROUND, FOREGROUND_PICTURE_IN_PICTURE, BACKGROUND
    * @throws IllegalArgumentError

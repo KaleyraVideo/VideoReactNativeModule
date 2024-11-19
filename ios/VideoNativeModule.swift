@@ -88,13 +88,6 @@ class VideoNativeModule: NSObject {
         }
     }
 
-    @objc(verifyCurrentCall:)
-    func verifyCurrentCall(verify: Bool) {
-        perform {
-            try bridge.verifyCurrentCall(verify)
-        }
-    }
-
     @objc(setDisplayModeForCurrentCall:)
     func setDisplayModeForCurrentCall(mode: String) {
         bridge.setDisplayModeForCurrentCall(mode)
