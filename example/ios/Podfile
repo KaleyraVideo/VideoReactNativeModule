@@ -29,7 +29,7 @@ target 'KaleyraVideoReact' do
     #
     # Flipper will not work with use_frameworks! and
     # we disable it the next line.
-    :flipper_configuration => FlipperConfiguration.enabled,
+    :flipper_configuration => FlipperConfiguration.disabled,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )

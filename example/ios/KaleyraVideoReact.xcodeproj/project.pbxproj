@@ -12,9 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9179F71029ACE4287B40A3C1 /* Pods_BroadcastExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF37B24EC620C4963E8AE6E0 /* Pods_BroadcastExtension.framework */; };
-		C4F06B2331AFF80F155AC057 /* Pods_KaleyraVideoReact_KaleyraVideoReactTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A59DDD14C3C193A310F240 /* Pods_KaleyraVideoReact_KaleyraVideoReactTests.framework */; };
-		E6A07246FCF1DD1F508C8395 /* Pods_KaleyraVideoReact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D1DD29C8AB83F9456761C /* Pods_KaleyraVideoReact.framework */; };
+		8D79543D4183F318DFE82260 /* libPods-KaleyraVideoReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263C9DC5AF04D399698744F1 /* libPods-KaleyraVideoReact.a */; };
+		B8AAB4A024062C5E3AF24C12 /* libPods-BroadcastExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F245A0723C94E2E78583F511 /* libPods-BroadcastExtension.a */; };
+		E7B079CC994021C4F7D0A87D /* libPods-KaleyraVideoReact-KaleyraVideoReactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4C5D477C0821333F50F52B /* libPods-KaleyraVideoReact-KaleyraVideoReactTests.a */; };
 		F9EE71382A3B44890089EA27 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EE71372A3B44890089EA27 /* ReplayKit.framework */; };
 		F9EE713B2A3B44890089EA27 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EE713A2A3B44890089EA27 /* SampleHandler.swift */; };
 		F9EE713F2A3B44890089EA27 /* BroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F9EE71362A3B44890089EA27 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -62,24 +62,24 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KaleyraVideoReact/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KaleyraVideoReact/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KaleyraVideoReact/main.m; sourceTree = "<group>"; };
+		263C9DC5AF04D399698744F1 /* libPods-KaleyraVideoReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaleyraVideoReact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7E85BC2A14D2A000F264FD /* KaleyraVideoReact.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = KaleyraVideoReact.entitlements; path = KaleyraVideoReact/KaleyraVideoReact.entitlements; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-KaleyraVideoReact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaleyraVideoReact.debug.xcconfig"; path = "Target Support Files/Pods-KaleyraVideoReact/Pods-KaleyraVideoReact.debug.xcconfig"; sourceTree = "<group>"; };
 		3F1F450E7B694A3AB6ADBBA2 /* Pods-BroadcastExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadcastExtension.debug.xcconfig"; path = "Target Support Files/Pods-BroadcastExtension/Pods-BroadcastExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		56A59DDD14C3C193A310F240 /* Pods_KaleyraVideoReact_KaleyraVideoReactTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaleyraVideoReact_KaleyraVideoReactTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-KaleyraVideoReact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaleyraVideoReact.release.xcconfig"; path = "Target Support Files/Pods-KaleyraVideoReact/Pods-KaleyraVideoReact.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-KaleyraVideoReact-KaleyraVideoReactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaleyraVideoReact-KaleyraVideoReactTests.debug.xcconfig"; path = "Target Support Files/Pods-KaleyraVideoReact-KaleyraVideoReactTests/Pods-KaleyraVideoReact-KaleyraVideoReactTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KaleyraVideoReact/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		892D1DD29C8AB83F9456761C /* Pods_KaleyraVideoReact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaleyraVideoReact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-KaleyraVideoReact-KaleyraVideoReactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaleyraVideoReact-KaleyraVideoReactTests.release.xcconfig"; path = "Target Support Files/Pods-KaleyraVideoReact-KaleyraVideoReactTests/Pods-KaleyraVideoReact-KaleyraVideoReactTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1CFF3B47BAFBE2AA86CDB3A /* Pods-BroadcastExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadcastExtension.release.xcconfig"; path = "Target Support Files/Pods-BroadcastExtension/Pods-BroadcastExtension.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F245A0723C94E2E78583F511 /* libPods-BroadcastExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BroadcastExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EE71362A3B44890089EA27 /* BroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EE71372A3B44890089EA27 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		F9EE713A2A3B44890089EA27 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
 		F9EE713C2A3B44890089EA27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9EE71442A3B452B0089EA27 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
 		F9EE71452A3B46140089EA27 /* KaleyraVideoConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KaleyraVideoConfig.plist; sourceTree = "<group>"; };
-		FF37B24EC620C4963E8AE6E0 /* Pods_BroadcastExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadcastExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4C5D477C0821333F50F52B /* libPods-KaleyraVideoReact-KaleyraVideoReactTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KaleyraVideoReact-KaleyraVideoReactTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4F06B2331AFF80F155AC057 /* Pods_KaleyraVideoReact_KaleyraVideoReactTests.framework in Frameworks */,
+				E7B079CC994021C4F7D0A87D /* libPods-KaleyraVideoReact-KaleyraVideoReactTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A07246FCF1DD1F508C8395 /* Pods_KaleyraVideoReact.framework in Frameworks */,
+				8D79543D4183F318DFE82260 /* libPods-KaleyraVideoReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9EE71382A3B44890089EA27 /* ReplayKit.framework in Frameworks */,
-				9179F71029ACE4287B40A3C1 /* Pods_BroadcastExtension.framework in Frameworks */,
+				B8AAB4A024062C5E3AF24C12 /* libPods-BroadcastExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,10 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				892D1DD29C8AB83F9456761C /* Pods_KaleyraVideoReact.framework */,
-				56A59DDD14C3C193A310F240 /* Pods_KaleyraVideoReact_KaleyraVideoReactTests.framework */,
 				F9EE71372A3B44890089EA27 /* ReplayKit.framework */,
-				FF37B24EC620C4963E8AE6E0 /* Pods_BroadcastExtension.framework */,
+				F245A0723C94E2E78583F511 /* libPods-BroadcastExtension.a */,
+				263C9DC5AF04D399698744F1 /* libPods-KaleyraVideoReact.a */,
+				FB4C5D477C0821333F50F52B /* libPods-KaleyraVideoReact-KaleyraVideoReactTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -717,7 +717,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -789,7 +789,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
