@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "10.0" }
+  s.platforms    = { :ios => "15.0" }
   s.source       = { :git => "git@github.com:KaleyraVideo/VideoReactNativeModule.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}", "native-bridge/iOS/Source/**/*.swift"
@@ -19,12 +19,12 @@ Pod::Spec.new do |s|
   s.dependency "React-Core"
 
   podfile = Pod::Podfile.from_file(Pathname.new('native-bridge/iOS/Podfile'))
-  pod = podfile.dependencies.select { |pod| pod.name == "Bandyer" }
+  pod = podfile.dependencies.select { |pod| pod.name == "KaleyraVideoSDK" }
 
   if defined?($KaleyraNoWebRTC)
-    s.dependency "Bandyer/Core", pod[0].requirement.to_s
+    s.dependency "KaleyraVideoSDK/Core", pod[0].requirement.to_s
   else
-    s.dependency "Bandyer", pod[0].requirement.to_s
+    s.dependency "KaleyraVideoSDK", pod[0].requirement.to_s
   end
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
