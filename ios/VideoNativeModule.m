@@ -7,8 +7,6 @@
 
 RCT_EXTERN_METHOD(configure:(NSString *)json)
 
-RCT_EXTERN_METHOD(setUserDetailsFormat:(NSString *)json)
-
 RCT_EXTERN_METHOD(setAccessTokenResponse:(NSString *)json)
 
 RCT_EXTERN_METHOD(connect:(NSString *)userID)

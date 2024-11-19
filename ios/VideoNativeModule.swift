@@ -38,13 +38,6 @@ class VideoNativeModule: NSObject {
         }
     }
 
-    @objc(setUserDetailsFormat:)
-    func setUserDetailsFormat(json: String) {
-        perform {
-            bridge.setUserDetailsFormat(try UserDetailsFormat.decodeJSON(json))
-        }
-    }
-
     @objc(setAccessTokenResponse:)
     func setAccessTokenResponse(json: String) {
         perform {

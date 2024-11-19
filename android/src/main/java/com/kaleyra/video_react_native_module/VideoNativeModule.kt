@@ -95,9 +95,6 @@ class VideoNativeModule(
   fun startCallUrl(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startCallUrl.name, payload)
 
   @ReactMethod
-  fun setUserDetailsFormat(payload: String)= reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::setUserDetailsFormat.name, payload)
-
-  @ReactMethod
   fun startChat(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startChat.name, payload)
 
   @ReactMethod

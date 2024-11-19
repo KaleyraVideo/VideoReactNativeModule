@@ -87,8 +87,6 @@ const connect = (user: string) => {
     },
   ]);
 
-  kaleyraVideo.setUserDetailsFormat({default:"${nickName}"})
-
 };
 const disconnect = () => kaleyraVideo.disconnect();
 const call = (participants: string[]) => {

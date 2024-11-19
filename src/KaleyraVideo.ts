@@ -5,8 +5,6 @@ import { NativeModules, Platform } from 'react-native';
 import type { KaleyraVideoConfiguration } from '../native-bridge/TypeScript/types/KaleyraVideoConfiguration';
 import type { CreateCallOptions } from '../native-bridge/TypeScript/types/CreateCallOptions';
 import type { UserDetails } from '../native-bridge/TypeScript/types/UserDetails';
-import type { UserDetailsFormat } from '../native-bridge/TypeScript/types/UserDetailsFormat';
-import { UserDetailsFormatValidator } from '../native-bridge/TypeScript/UserDetailsFormatValidator';
 import { CallType } from '../native-bridge/TypeScript/types/CallType';
 import { IllegalArgumentError } from '../native-bridge/TypeScript/errors/IllegalArgumentError';
 import { Environments } from '../native-bridge/TypeScript/Environments';
@@ -249,16 +247,6 @@ class KaleyraVideo {
     VideoNativeModuleBridge.addUsersDetails(JSON.stringify(userDetails));
   }
 
-  setUserDetailsFormat(format: UserDetailsFormat) {
-    const validator = new UserDetailsFormatValidator();
-    validator.validate(format.default);
-    if (format.androidNotification !== undefined) {
-      validator.validate(format.androidNotification);
-    }
-
-    VideoNativeModuleBridge.setUserDetailsFormat(JSON.stringify(format));
-  }
-
   /**
    * Call this method to remove all the user details previously provided.
    */
@@ -335,7 +323,6 @@ export {
   CallType,
   Regions,
   UserDetails,
-  UserDetailsFormat,
   CallDisplayMode,
   Session,
   Environments,
