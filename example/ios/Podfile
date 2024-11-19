@@ -1,9 +1,14 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, min_ios_version_supported
-prepare_react_native_project!
+# KaleyraVideoSDK minimum deployment target is iOS 15, these instructions needs to select the maximum iOS version between KaleyraVideoSDK minimum and
+# ReactNative minimum deployment targets.
+min_ios_versions_supported = ['15.0', min_ios_version_supported]
+index_of_max = min_ios_versions_supported.each_with_index.max_by { |number, _| number.to_f }[1]
+actual_min_ios_version_supported = min_ios_versions_supported[index_of_max]
 
+platform :ios, actual_min_ios_version_supported
+prepare_react_native_project!
 
 # use_frameworks! is required for using Bandyer framework, linkage static is required by React Native instead.
 
@@ -50,7 +55,7 @@ target 'KaleyraVideoReact' do
 
     installer.pods_project.targets.each do |target|
           target.build_configurations.each do |config|
-            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = min_ios_version_supported
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = actual_min_ios_version_supported
 
             # https://stackoverflow.com/a/77136535
             config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', '_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION']
