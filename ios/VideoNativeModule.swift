@@ -2,7 +2,7 @@
 // See LICENSE for licensing information
 
 import Foundation
-import Bandyer
+import KaleyraVideoSDK
 import React
 
 @available(iOS 12.0, *)
