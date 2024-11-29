@@ -30,13 +30,12 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = 'KaleyraVideoReact'
+include ':react-native-hms-push'
+project(':react-native-hms-push').projectDir = new File(rootProject.projectDir, '../node_modules/@hmscore/react-native-hms-push/android')
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
 includeBuild('../../node_modules/@react-native/gradle-plugin')
 
 include ':react-native-notifications'
 project(':react-native-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-notifications/lib/android/app')
-
-include ':react-native-hms-push'
-project(':react-native-hms-push').projectDir = new File(rootProject.projectDir, '../node_modules/@hmscore/react-native-hms-push/android')
 

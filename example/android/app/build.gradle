@@ -5,7 +5,6 @@ plugins {
   id "com.android.application"
   id "kotlin-android"
   id "com.facebook.react"
-//  id: "com.huawei.agconnect"
 }
 
 import com.android.build.OutputFile
@@ -173,7 +172,7 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-//    implementation project(':react-native-hms-push')
+    implementation "com.huawei.hms:push:6.12.0.300"
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

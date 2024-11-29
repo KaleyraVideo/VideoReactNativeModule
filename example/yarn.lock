@@ -1492,6 +1492,16 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@hmscore/react-native-hms-availability@^6.12.0-300":
+  version "6.12.0-300"
+  resolved "https://registry.yarnpkg.com/@hmscore/react-native-hms-availability/-/react-native-hms-availability-6.12.0-300.tgz#4413f9b208a3d5ed57556fe50ca83b1112dd9e84"
+  integrity sha512-c7Sftx7RisSUazLW/Tln3fP7GhRVqy8RHwLSbLuqv784tFWyCHK/6SWVX+vYmTY/i5zJ0jYcMLTZpXTE8X/xlA==
+
+"@hmscore/react-native-hms-push@^6.12.0-302":
+  version "6.12.0-302"
+  resolved "https://registry.yarnpkg.com/@hmscore/react-native-hms-push/-/react-native-hms-push-6.12.0-302.tgz#6fe71cb7bff30002c8ac845f730a70016afaa9ca"
+  integrity sha512-JMSw3bKo3neS9fUER5MNaD0mTetj4radU9g0Xy2qr3vIlGJzsfjzER+MQicRfAcgnA+F6qALQxO+SMj/VFNhwg==
+
 "@isaacs/ttlcache@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@isaacs/ttlcache/-/ttlcache-1.4.1.tgz#21fb23db34e9b6220c6ba023a0118a2dd3461ea2"
