@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
+    "android": "npx react-native start",
     "ios": "expo start --ios",
     "pods": "pod-install --quiet"
   },
