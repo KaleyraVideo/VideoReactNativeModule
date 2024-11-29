@@ -1,9 +1,12 @@
 // Copyright © 2018-2023 Kaleyra S.p.a. All Rights Reserved.
 // See LICENSE for licensing information
 
-apply plugin: "com.android.application"
-apply plugin: "com.facebook.react"
-apply plugin: "com.huawei.agconnect"
+plugins {
+  id "com.android.application"
+  id "kotlin-android"
+  id "com.facebook.react"
+//  id: "com.huawei.agconnect"
+}
 
 import com.android.build.OutputFile
 
@@ -95,10 +98,9 @@ def reactNativeArchitectures() {
 android {
     ndkVersion rootProject.ext.ndkVersion
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
-
     namespace "com.kaleyra.videoReactExample"
     defaultConfig {
+        compileSdk rootProject.ext.compileSdkVersion
         applicationId "com.kaleyra.videoReactExample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -134,6 +136,13 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    buildFeatures {
+      buildConfig true
+    }
+
+    compileOptions {
+      coreLibraryDesugaringEnabled true
+    }
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
@@ -150,11 +159,14 @@ android {
 
         }
     }
+
 }
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+
+    coreLibraryDesugaring catalog.desugar
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
@@ -169,7 +181,7 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-    implementation project(':react-native-hms-push')
+//    implementation project(':react-native-hms-push')
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

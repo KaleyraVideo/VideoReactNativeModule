@@ -88,8 +88,8 @@
     "pod-install": "^0.1.0",
     "prettier": "^3.3.3",
     "quicktype": "^16.0.43",
-    "react": "18.2.0",
-    "react-native": "^0.72.0",
+    "react": "18.3.1",
+    "react-native": "^0.74.6",
     "typedoc": "^0.24.4",
     "typescript": "^4.9.5"
   },

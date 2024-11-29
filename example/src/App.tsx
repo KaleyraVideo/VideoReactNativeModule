@@ -11,7 +11,7 @@ import { styles } from './styles/styles';
 import { Button, TextInput } from 'react-native-paper';
 import { Environments, KaleyraVideo, Regions, RecordingType, AudioCallType, CallType } from '@kaleyra/video-react-native-module';
 import { NotificationProxy } from './NotificationProxy';
-import { HmsPushMessaging } from '@hmscore/react-native-hms-push';
+// import { HmsPushMessaging } from '@hmscore/react-native-hms-push';
 import { UserStorage } from './useStorage';
 import messaging from '@react-native-firebase/messaging';
 
@@ -43,13 +43,13 @@ const kaleyraVideo = KaleyraVideo.configure({
 });
 
 if (Platform.OS === 'android') {
-  HmsPushMessaging.setBackgroundMessageHandler(async (dataMessage: any) => {
-    const user = await UserStorage.user;
-    if (!user) return Promise.reject('user not logged');
-    connect(user);
-    console.log('HMS Message handled in the background!', dataMessage);
-    return Promise.resolve();
-  });
+//   HmsPushMessaging.setBackgroundMessageHandler(async (dataMessage: any) => {
+//     const user = await UserStorage.user;
+//     if (!user) return Promise.reject('user not logged');
+//     connect(user);
+//     console.log('HMS Message handled in the background!', dataMessage);
+//     return Promise.resolve();
+//   });
   messaging().setBackgroundMessageHandler(async (remoteMessage) => {
     const user = await UserStorage.user;
     if (!user) return Promise.reject('user not logged');
@@ -58,10 +58,14 @@ if (Platform.OS === 'android') {
   });
 }
 const connect = (user: string) => {
+  console.log("app-connect")
   kaleyraVideo.connect({
     userID: user,
     accessTokenProvider(userId: string): Promise<string> {
-      return getAccessToken(userId);
+      console.log("app-token-provider");
+      let token = getAccessToken(userId);
+      console.log("app-token-receive $token", token);
+      return token
     },
   });
   kaleyraVideo.addUsersDetails([
@@ -129,7 +133,7 @@ export default function App() {
 
   return (
     <View style={styles.flex}>
-      <Image style={styles.logo} source={require('./images/logo.png')} />
+      <Image style={styles.logo} source={{ uri: './images/logo.png'}} />
       <TextInput
         label='Sign in userID'
         value={signInUserInput}

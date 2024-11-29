@@ -1,4 +1,4 @@
-import { HmsPushInstanceId } from '@hmscore/react-native-hms-push';
+// import { HmsPushInstanceId } from '@hmscore/react-native-hms-push';
 import {
   subscribeForNotifications,
   unSubscribeForNotifications,
@@ -7,9 +7,9 @@ import {
 import { PermissionsAndroid, Platform } from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 
-const getHMSCore = async () => {
-  return await import('@hmscore/react-native-hms-availability');
-};
+// const getHMSCore = async () => {
+//   return await import('@hmscore/react-native-hms-availability');
+// };
 
 export class NotificationProxy {
   private static token: string;
@@ -22,12 +22,12 @@ export class NotificationProxy {
     await PermissionsAndroid.request(
       PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
     );
-    const HMSCore = await getHMSCore();
+//     const HMSCore = await getHMSCore();
     let pushProvider;
 
-    const isHuaweiSupported =
-      (await (HMSCore.default as any).isHuaweiMobileServicesAvailable()) ===
-      HMSCore.ErrorCode.HMS_CORE_APK_AVAILABLE;
+    const isHuaweiSupported = false
+//       (await (HMSCore.default as any).isHuaweiMobileServicesAvailable()) ===
+//       HMSCore.ErrorCode.HMS_CORE_APK_AVAILABLE;
     if (isHuaweiSupported) {
       pushProvider = 'HMS';
       NotificationProxy.token = (

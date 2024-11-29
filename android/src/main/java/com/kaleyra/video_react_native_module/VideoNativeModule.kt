@@ -80,12 +80,6 @@ class VideoNativeModule(
   private fun clearUserCache() = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::clearUserCache.name)
 
   @ReactMethod
-  fun handlePushNotificationPayload(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::handlePushNotificationPayload.name, payload)
-
-  @ReactMethod
-  fun verifyCurrentCall(payload: Boolean) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::verifyCurrentCall.name, payload.toString())
-
-  @ReactMethod
   fun setDisplayModeForCurrentCall(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::setDisplayModeForCurrentCall.name, payload)
 
   @ReactMethod
