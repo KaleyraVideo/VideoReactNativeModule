@@ -23,8 +23,10 @@ yarn prepack
 yarn link
 cd example
 # nano .env use your own keys
+yarn
 yarn link @kaleyra/video-react-native-module
 yarn pods
+yarn start
 yarn ios
 yarn android
 ```

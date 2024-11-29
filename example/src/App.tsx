@@ -2,18 +2,27 @@
 // See LICENSE for licensing information
 
 import * as React from 'react';
-import { useCallback, useEffect, useRef } from 'react';
+import {useCallback, useEffect, useRef} from 'react';
 
-import { APP_ID, ENVIRONMENT, REGION } from '@env';
-import { getAccessToken } from './useAccessToken';
-import { Image, Platform, View } from 'react-native';
-import { styles } from './styles/styles';
-import { Button, TextInput } from 'react-native-paper';
-import { Environments, KaleyraVideo, Regions, RecordingType, AudioCallType, CallType } from '@kaleyra/video-react-native-module';
-import { NotificationProxy } from './NotificationProxy';
+import {APP_ID, ENVIRONMENT, REGION} from '@env';
+import {getAccessToken} from './useAccessToken';
+import {Image, Platform, View} from 'react-native';
+import {styles} from './styles/styles';
+import {Button, TextInput} from 'react-native-paper';
+import {
+  Environments,
+  KaleyraVideo,
+  Regions,
+  RecordingType,
+  AudioCallType,
+  CallType
+} from '@kaleyra/video-react-native-module';
+import {NotificationProxy} from './NotificationProxy';
 // import { HmsPushMessaging } from '@hmscore/react-native-hms-push';
-import { UserStorage } from './useStorage';
+import {UserStorage} from './useStorage';
 import messaging from '@react-native-firebase/messaging';
+
+const logo = require('./images/logo.png');
 
 const kaleyraVideo = KaleyraVideo.configure({
   appID: APP_ID,
@@ -22,7 +31,7 @@ const kaleyraVideo = KaleyraVideo.configure({
   logEnabled: true,
   tools: {
     chat: {
-      audioCallOption: { type: AudioCallType.AUDIO },
+      audioCallOption: {type: AudioCallType.AUDIO},
       videoCallOption: {
         recordingType: RecordingType.NONE,
       },
@@ -96,7 +105,7 @@ const chat = (participants: string[]) => {
 };
 
 export default function App() {
-  const { user, storeUser, removeUser } = UserStorage.useUserStorage();
+  const {user, storeUser, removeUser} = UserStorage.useUserStorage();
   const [signInUserInput, setSignInUserInput] = React.useState('');
   const signedUserInitialized = useRef(false);
   const participants = useRef<string[]>([]);
@@ -109,7 +118,7 @@ export default function App() {
       kaleyraVideo.events.oniOSVoipPushTokenUpdated = (token: string) => {
         NotificationProxy.subscribeForVoipNotifications(signInUser, token);
       };
-      kaleyraVideo.getCurrentVoIPPushToken().then((voipToken) => {
+      kaleyraVideo.getCurrentVoIPPushToken().then((voipToken: any) => {
         if (!voipToken) return;
         NotificationProxy.subscribeForVoipNotifications('kri1', voipToken);
       });
@@ -133,7 +142,7 @@ export default function App() {
 
   return (
     <View style={styles.flex}>
-      <Image style={styles.logo} source={{ uri: './images/logo.png'}} />
+      <Image style={styles.logo} source={logo}/>
       <TextInput
         label='Sign in userID'
         value={signInUserInput}
