@@ -28,7 +28,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 **/.xcode.env.local
-project.xcworkspace
+example/**/project.xcworkspace
 
 # Android/IJ
 #
