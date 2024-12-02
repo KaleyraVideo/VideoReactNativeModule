@@ -13,7 +13,7 @@ buildscript {
   dependencies {
     classpath "com.android.tools.build:gradle:8.1.1"
     // noinspection DifferentKotlinGradleVersion
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
 
@@ -22,7 +22,6 @@ def isNewArchitectureEnabled() {
 }
 
 plugins {
-//  id 'com.google.devtools.ksp' version catalog.versions.googleDevToolsKspVersion
   id 'com.google.devtools.ksp' version "1.9.0-1.0.13"
 }
 
@@ -56,9 +55,7 @@ android {
       minifyEnabled false
     }
   }
-buildFeatures {
-  buildConfig true
-}
+
   sourceSets {
     main.java.srcDirs += '../native-bridge/android/src/main/java'
     test.java.srcDirs += '../native-bridge/android/src/test/java'
