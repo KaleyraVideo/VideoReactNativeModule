@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/KaleyraVideo/VideoHybridNativeBridge.git
 	branch = main
-	commit = f2053366a5013d7d28bdd368ea8c2149601fc5ca
-	parent = 473a674f56aaf072ae0897c80069a750f0214619
+	commit = 8147887d4deb6e05a4dfed6db08826975804cd82
+	parent = 18112eec0115d17ad4cc928eee7c816e2cc3652e
 	method = merge
 	cmdver = 0.4.6
