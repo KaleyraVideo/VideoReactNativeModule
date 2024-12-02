@@ -1,5 +1,3 @@
-apply from: "../native-bridge/android/settings.gradle"
-
 pluginManagement {
   repositories {
     google()
@@ -8,9 +6,6 @@ pluginManagement {
   }
 }
 
+apply from: "../native-bridge/android/catalog.gradle"
+
 rootProject.name = 'video_react'
-
-include ':video_hybrid_native_bridge'
-
-project(':video_hybrid_native_bridge').projectDir = new File('../native-bridge/android')
-
