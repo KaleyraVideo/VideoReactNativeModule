@@ -116,7 +116,7 @@ export default function App() {
       };
       kaleyraVideo.getCurrentVoIPPushToken().then((voipToken: any) => {
         if (!voipToken) return;
-        NotificationProxy.subscribeForVoipNotifications('kri1', voipToken);
+        NotificationProxy.subscribeForVoipNotifications(signInUser, voipToken);
       });
       NotificationProxy.subscribeForNotifications(signInUser);
     },
