@@ -8,7 +8,7 @@ pluginManagement {
   }
 }
 
-apply from: file("../../native-bridge/android/catalog.gradle")
+apply from: file("../node_modules/@kaleyra/video-react-native-module/native-bridge/android/catalog.gradle")
 
 rootProject.name = 'KaleyraVideoReact'
 include ':react-native-hms-push'
