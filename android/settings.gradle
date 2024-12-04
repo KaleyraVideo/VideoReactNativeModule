@@ -1,11 +1,1 @@
-pluginManagement {
-  repositories {
-    google()
-    mavenCentral()
-    gradlePluginPortal()
-  }
-}
-
-apply from: "../native-bridge/android/catalog.gradle"
-
 rootProject.name = 'video_react'

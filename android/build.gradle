@@ -2,14 +2,19 @@
 // See LICENSE for licensing information
 
 buildscript {
+  ext {
+    gradleVersion = "8.1.1"
+    kotlinVersion = "1.9.0"
+  }
+
   repositories {
     google()
     mavenCentral()
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:${catalog.versions.gradleVersion.get()}"
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${catalog.versions.jetbrainsKotlinVersion.get()}"
+    classpath "com.android.tools.build:gradle:$gradleVersion"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
   }
 }
 
@@ -18,7 +23,7 @@ def isNewArchitectureEnabled() {
 }
 
 plugins {
-  id 'com.google.devtools.ksp' version catalog.versions.googleDevToolsKspVersion
+  id 'com.google.devtools.ksp' version "1.9.0-1.0.13"
 }
 
 apply plugin: "com.android.library"

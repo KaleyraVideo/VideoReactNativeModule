@@ -8,8 +8,6 @@ pluginManagement {
   }
 }
 
-apply from: file("../node_modules/@kaleyra/video-react-native-module/native-bridge/android/catalog.gradle")
-
 rootProject.name = 'KaleyraVideoReact'
 include ':react-native-hms-push'
 project(':react-native-hms-push').projectDir = new File(rootProject.projectDir, '../node_modules/@hmscore/react-native-hms-push/android')
