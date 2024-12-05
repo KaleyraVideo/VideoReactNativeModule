@@ -25,7 +25,9 @@ jobs:
     runs-on: macos-latest
     environment:
       name: release_environment
-
+    defaults:
+      run:
+        working-directory: ./videoReactNativeModule
     steps:
       - uses: actions/create-github-app-token@v1
         id: app-token
@@ -33,12 +35,16 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
-          repositories: VideoFlutterPlugin
+          repositories: VideoReactNativeModule
 
       - uses: actions/checkout@v2
         with:
-          token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          repository: KaleyraVideo/VideoReactNativeModule
+          path: videoReactNativeModule
+          ref: 'main'
           fetch-depth: 0
+          fetch-tags: true
+          token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v2
         with:
@@ -82,6 +88,7 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
+            repository: ./videoReactNativeModule
             commit_message: "chore: updated to version ${{ steps.package-version.outputs.current-version }}"
             tagging_message: "v${{ steps.package-version.outputs.current-version }}"
 
