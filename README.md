@@ -315,28 +315,7 @@ You will need to set the **voipHandlingStrategy** and subscribe to **iOSVoipPush
  > Be aware that notifications VOIP notifications are different compared to push. They must be always handled by ensuring the invocation of the configure and connect methods in index.js or App.js.
 
 ## Android Notifications
-Supports only **on_call_incoming** and **on_message_sent** notification types.
- > Be aware that notifications require **HIGH priority**
-
-```javascript
-kaleyraVideo.handlePushNotificationPayload(payload);
-```
-
-Example of acceptable payload
-```json
-{
-  "google.delivered_priority":"high",
-  "content-available":"1",
-  "google.sent_time":1663347601917,
-  "google.ttl":60,
-  "google.original_priority":"high",
-  "from":"320",
-  "title":"",
-  "google.message_id":"0:1123%ac212d7bf9fd7ecd",
-  "message":"{\"kaleyra\":{\"payload\":{\"event\":\"on_call_incoming\",\"room_id\":\"room_b36f162\",\"data\":{\"initiator\":\"user1\",\"users\":[{\"user\":{\"userAlias\":\"user2\"},\"status\":\"invited\"},{\"user\":{\"userAlias\":\"user1\"},\"status\":\"invited\"}],\"roomAlias\":\"room_b37a64c6f162\",\"options\":{\"duration\":0,\"record\":true,\"recordingType\":\"manual\",\"recording\":\"manual\",\"creationDate\":\"2022-09-16T17:00:01.457Z\",\"callType\":\"audio_upgradable\",\"live\":true}}},\"user_token\":\"eyJhtokenksadfjoiasdjfoaidjfsoasidjfoi\"}}",
-  "google.c.sender.id":"320"
-}
-```
+Supports automatically **on_call_incoming** and **on_message_sent** notification types.
 
 ## Proguard
 ```groovy
