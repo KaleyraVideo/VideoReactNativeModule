@@ -1,6 +1,6 @@
 {
   "name": "@kaleyra/video-react-native-module",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Kaleyra Video module for react native.",
   "main": "lib/commonjs/index.js",
@@ -48,9 +48,9 @@
     "doc": "typedoc",
     "openDoc": "open ./docs/index.html",
     "version": "npm run doc && python3 update_plugin_version.py && npm run buildJs && git add . ",
-    "major": "npm version major -m \"chore: updated to version %s\"",
-    "minor": "npm version minor -m \"chore: updated to version %s\"",
-    "patch": "npm version patch -m \"chore: updated to version %s\""
+    "major": "npm version major --git-tag-version false",
+    "minor": "npm version minor --git-tag-version false",
+    "patch": "npm version patch --git-tag-version false"
   },
   "keywords": [
     "react-native",
