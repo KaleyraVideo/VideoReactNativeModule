@@ -51,7 +51,7 @@ jobs:
           node-version: 18
 
       - name: Setup
-        uses: KaleyraVideo/VideoReactNativeModule/.github/actions/setup.yml@main
+        uses: KaleyraVideo/VideoReactNativeModule/.github/actions/setup/action.yml@main
 
       - name: Setting up environment
         run: |
