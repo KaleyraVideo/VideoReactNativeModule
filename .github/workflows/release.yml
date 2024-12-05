@@ -46,12 +46,17 @@ jobs:
           fetch-tags: true
           token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+           node-version-file: .nvmrc
 
-      - name: Setup
-        uses: KaleyraVideo/VideoReactNativeModule/.github/actions/setup/action.yml@main
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --cwd example --frozen-lockfile
+          yarn install --frozen-lockfile
+        shell: bash
 
       - name: Setting up environment
         run: |
