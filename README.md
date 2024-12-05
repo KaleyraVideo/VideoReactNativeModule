@@ -8,10 +8,14 @@
 
 ```
 ruby = 2.7.6
-node >= v16
-react >= 0.71.x
+node >= v18
+react-native >= 0.74.x
 yarn >= 1.22.17
 ```
+
+## Minimum requirements
+- Android 21+, gradle 8+, kotlin 1.9+
+- iOS 15+, swift 5.x
 
 ## How to run the example
 
@@ -235,8 +239,8 @@ This method will allow you to set your user details DB from which the sdk will r
 
 ```javascript
 kaleyraVideo.addUsersDetails([
-    {userID: "usr_yyy", firstName: "User1Name", lastName: "User1Surname"},
-    {userID: "usr_zzz", firstName: "User2Name", lastName: "User2Surname"},
+    {userID: "usr_yyy", name: "User1Name", imageUrl: "https://www.example.com/user1image.png"},
+    {userID: "usr_zzz", name: "User2Name", imageUrl: "https://www.example.com/user2image.png"},
 ]);
 ```
 
@@ -248,19 +252,6 @@ This method will allow you to remove all the user info from the local app DB.
 kaleyraVideo.removeUsersDetails();
 ```
 
-## Set user details format
-
-This method will allow you to specify how you want your user details to be displayed.
-> Be aware that you can specify only keywords which exist in the UserDetails type.
-
-For example: if you wish to show only the firstName while your dataset contains also the lastName you may change it here.
-
-```javascript
-kaleyraVideo.setUserDetailsFormat({
-    default: "${firstName} ${lastName}",
-    androidNotification: "${firstName} ${lastName}" // optional if you wish to personalize the details in the notification.
-});
-```
 
 ## Remove all the cached info in preferences and DBs
 
@@ -275,14 +266,6 @@ For example: if you wish to show fingerprint dialog you should first put the cur
 
 ```javascript
 kaleyraVideo.setDisplayModeForCurrentCall(CallDisplayMode.FOREGROUND); // FOREGROUND, FOREGROUND_PICTURE_IN_PICTURE or CallDisplayMode.BACKGROUND
-```
-
-## Verify user
-
-To verify a user for the current call.
-
-```javascript
-kaleyraVideo.verifyCurrentCall(true);
 ```
 
 ## iOS Broadcast Screen sharing
