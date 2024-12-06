@@ -315,7 +315,7 @@ You will need to set the **voipHandlingStrategy** and subscribe to **iOSVoipPush
  > Be aware that notifications VOIP notifications are different compared to push. They must be always handled by ensuring the invocation of the configure and connect methods in index.js or App.js.
 
 ## Android Notifications
-Supports automatically **on_call_incoming** and **on_message_sent** notification types.
+When recevied a **on_call_incoming** or **on_message_sent** notification you just need to configure and connect the plugin and it will automatically show the notification.
 
 ## Proguard
 ```groovy
