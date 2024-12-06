@@ -75,7 +75,7 @@ jobs:
           git subrepo pull native-bridge -m "chore: update native-bridge"
 
       - name: Update package version
-        run: npm run ${{ github.event.inputs.release_kind }}
+        run: npm run ${{ inputs.release_kind }}
 
       - name: get-npm-version
         id: package-version
