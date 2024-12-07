@@ -86,6 +86,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
             repository: ./videoReactNativeModule
+            branch: main
             commit_message: "chore: updated to version ${{ steps.package-version.outputs.current-version }}"
             tagging_message: "v${{ steps.package-version.outputs.current-version }}"
 
