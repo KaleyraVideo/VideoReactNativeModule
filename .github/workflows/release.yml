@@ -7,7 +7,7 @@ on:
         type: string
         description: What kind of release do you want to do?
         required: false
-        
+
   workflow_dispatch:
     inputs:
       release_kind:
@@ -76,19 +76,6 @@ jobs:
 
       - name: Update package version
         run: npm run ${{ inputs.release_kind }}
-
-      - name: get-npm-version
-        id: package-version
-        run: |
-          PACKAGE_VERSION=$(npm pkg get version | xargs)
-          echo "current-version=${PACKAGE_VERSION}" >> $GITHUB_OUTPUT
-
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-            repository: ./videoReactNativeModule
-            branch: main
-            commit_message: "chore: updated to version ${{ steps.package-version.outputs.current-version }}"
-            tagging_message: "v${{ steps.package-version.outputs.current-version }}"
 
       - name: Remove "private" constraint from package.json file
         run: |
