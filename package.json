@@ -1,6 +1,6 @@
 {
   "name": "@kaleyra/video-react-native-module",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Kaleyra Video module for react native.",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
