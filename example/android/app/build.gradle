@@ -135,6 +135,13 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+  
+    compileOptions {
+      coreLibraryDesugaringEnabled true
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
@@ -155,6 +162,8 @@ android {
 }
 
 dependencies {
+	coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.5"
+
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
