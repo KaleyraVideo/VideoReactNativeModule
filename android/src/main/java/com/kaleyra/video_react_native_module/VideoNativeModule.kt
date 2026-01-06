@@ -62,39 +62,39 @@ class VideoNativeModule(
   }
 
   @ReactMethod
-  fun configure(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::configureBridge.name, payload)
+  fun configure(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::configureBridge.name, payload) }
 
   @ReactMethod
-  fun connect(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::connect.name, payload)
+  fun connect(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::connect.name, payload) }
 
   @ReactMethod
-  fun setAccessTokenResponse(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::setAccessTokenResponse.name, payload)
+  fun setAccessTokenResponse(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::setAccessTokenResponse.name, payload) }
 
   @ReactMethod
-  private fun disconnect() = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::disconnect.name)
+  private fun disconnect() { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::disconnect.name) }
 
   @ReactMethod
-  fun reset() = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::reset.name)
+  fun reset() { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::reset.name) }
 
   @ReactMethod
-  private fun clearUserCache() = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::clearUserCache.name)
+  private fun clearUserCache() { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::clearUserCache.name) }
 
   @ReactMethod
-  fun setDisplayModeForCurrentCall(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::setDisplayModeForCurrentCall.name, payload)
+  fun setDisplayModeForCurrentCall(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::setDisplayModeForCurrentCall.name, payload) }
 
   @ReactMethod
-  fun startCall(payload: String)= reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startCall.name, payload)
+  fun startCall(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startCall.name, payload) }
 
   @ReactMethod
-  fun startCallUrl(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startCallUrl.name, payload)
+  fun startCallUrl(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startCallUrl.name, payload) }
 
   @ReactMethod
-  fun startChat(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startChat.name, payload)
+  fun startChat(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::startChat.name, payload) }
 
   @ReactMethod
-  fun addUsersDetails(payload: String) = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::addUsersDetails.name, payload)
+  fun addUsersDetails(payload: String) { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::addUsersDetails.name, payload) }
 
   @ReactMethod
-  fun removeUsersDetails() = reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::removeUserDetails.name)
+  fun removeUsersDetails() { reactNativeVideoHybridBridge.invoke(reactNativeVideoHybridBridge::removeUserDetails.name) }
 
 }
