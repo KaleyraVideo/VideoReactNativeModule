@@ -60,13 +60,11 @@ internal class TLSSocketFactoryCompat : SSLSocketFactory {
         if (socket !is SSLSocket) return null
         //Create list of supported protocols
         val supportedProtocols = ArrayList<String>()
-        for (protocol in socket.enabledProtocols) {
-            //Only add TLS protocols (don't want ot support older SSL versions)
-            if (protocol.toUpperCase().contains("TLS")) supportedProtocols.add(protocol)
+        for (protocol in socket.supportedProtocols) {
+            //Only add TLS protocols (don't want to support older SSL versions)
+            if (protocol.uppercase().contains("TLS")) supportedProtocols.add(protocol)
         }
-        //Force add TLSv1.1 and 1.2 if not already added
-        if (!supportedProtocols.contains("TLSv1.1")) supportedProtocols.add("TLSv1.1")
-        if (!supportedProtocols.contains("TLSv1.2")) supportedProtocols.add("TLSv1.2")
+
         val protocolArray = supportedProtocols.toTypedArray()
 
         //enable protocols in our list
