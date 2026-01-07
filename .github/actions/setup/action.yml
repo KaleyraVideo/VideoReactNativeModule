@@ -10,7 +10,6 @@ runs:
         node-version-file: .nvmrc
 
     - name: Cache dependencies
-      id: yarn-cache
       uses: actions/cache@v3
       with:
         path: |
@@ -20,7 +19,6 @@ runs:
           ${{ runner.os }}-yarn-
 
     - name: Install dependencies
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: |
         yarn install --cwd example --frozen-lockfile
         yarn install --frozen-lockfile
